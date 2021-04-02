@@ -1,0 +1,145 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="FSDDatabaseModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="BarnTable">
+          <Key>
+            <PropertyRef Name="Bfyrasiffror" />
+          </Key>
+          <Property Name="Bfyrasiffror" Type="int" Nullable="false" />
+          <Property Name="Bfodelsedatum" Type="int" Nullable="false" />
+          <Property Name="Bfornamn" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Befternamn" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Bpostadress" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Bpostort" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Bpostnummer" Type="int" Nullable="false" />
+          <Property Name="Vfyrasiffror" Type="int" Nullable="false" />
+          <Property Name="Vfodelsedatum" Type="int" Nullable="false" />
+          <Property Name="Vfornamn" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Vefternamn" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Vhemtelefon" Type="int" Nullable="false" />
+          <Property Name="Vmobiltelefon" Type="int" Nullable="false" />
+          <Property Name="Vpostadress" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Vpostort" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Vpostnummer" Type="int" Nullable="false" />
+          <Property Name="Forskola" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="StatusTable">
+          <Key>
+            <PropertyRef Name="Bfyrasiffror" />
+          </Key>
+          <Property Name="Bfyrasiffror" Type="int" Nullable="false" />
+          <Property Name="Bedomning" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Datum" Type="date" Nullable="false" />
+          <Property Name="Kommentar" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="FSDDatabaseModelStoreContainer">
+          <EntitySet Name="BarnTable" EntityType="Self.BarnTable" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="StatusTable" EntityType="Self.StatusTable" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="FSDDatabaseModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="BarnTable">
+          <Key>
+            <PropertyRef Name="Bfyrasiffror" />
+          </Key>
+          <Property Name="Bfyrasiffror" Type="Int32" Nullable="false" />
+          <Property Name="Bfodelsedatum" Type="Int32" Nullable="false" />
+          <Property Name="Bfornamn" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Befternamn" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Bpostadress" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Bpostort" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Bpostnummer" Type="Int32" Nullable="false" />
+          <Property Name="Vfyrasiffror" Type="Int32" Nullable="false" />
+          <Property Name="Vfodelsedatum" Type="Int32" Nullable="false" />
+          <Property Name="Vfornamn" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Vefternamn" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Vhemtelefon" Type="Int32" Nullable="false" />
+          <Property Name="Vmobiltelefon" Type="Int32" Nullable="false" />
+          <Property Name="Vpostadress" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Vpostort" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Vpostnummer" Type="Int32" Nullable="false" />
+          <Property Name="Forskola" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="StatusTable">
+          <Key>
+            <PropertyRef Name="Bfyrasiffror" />
+          </Key>
+          <Property Name="Bfyrasiffror" Type="Int32" Nullable="false" />
+          <Property Name="Bedomning" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Datum" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Kommentar" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="FSDDatabaseEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="BarnTable" EntityType="Self.BarnTable" />
+          <EntitySet Name="StatusTable" EntityType="Self.StatusTable" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="FSDDatabaseModelStoreContainer" CdmEntityContainer="FSDDatabaseEntities">
+          <EntitySetMapping Name="BarnTable">
+            <EntityTypeMapping TypeName="FSDDatabaseModel.BarnTable">
+              <MappingFragment StoreEntitySet="BarnTable">
+                <ScalarProperty Name="Bfyrasiffror" ColumnName="Bfyrasiffror" />
+                <ScalarProperty Name="Bfodelsedatum" ColumnName="Bfodelsedatum" />
+                <ScalarProperty Name="Bfornamn" ColumnName="Bfornamn" />
+                <ScalarProperty Name="Befternamn" ColumnName="Befternamn" />
+                <ScalarProperty Name="Bpostadress" ColumnName="Bpostadress" />
+                <ScalarProperty Name="Bpostort" ColumnName="Bpostort" />
+                <ScalarProperty Name="Bpostnummer" ColumnName="Bpostnummer" />
+                <ScalarProperty Name="Vfyrasiffror" ColumnName="Vfyrasiffror" />
+                <ScalarProperty Name="Vfodelsedatum" ColumnName="Vfodelsedatum" />
+                <ScalarProperty Name="Vfornamn" ColumnName="Vfornamn" />
+                <ScalarProperty Name="Vefternamn" ColumnName="Vefternamn" />
+                <ScalarProperty Name="Vhemtelefon" ColumnName="Vhemtelefon" />
+                <ScalarProperty Name="Vmobiltelefon" ColumnName="Vmobiltelefon" />
+                <ScalarProperty Name="Vpostadress" ColumnName="Vpostadress" />
+                <ScalarProperty Name="Vpostort" ColumnName="Vpostort" />
+                <ScalarProperty Name="Vpostnummer" ColumnName="Vpostnummer" />
+                <ScalarProperty Name="Forskola" ColumnName="Forskola" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="StatusTable">
+            <EntityTypeMapping TypeName="FSDDatabaseModel.StatusTable">
+              <MappingFragment StoreEntitySet="StatusTable">
+                <ScalarProperty Name="Bfyrasiffror" ColumnName="Bfyrasiffror" />
+                <ScalarProperty Name="Bedomning" ColumnName="Bedomning" />
+                <ScalarProperty Name="Datum" ColumnName="Datum" />
+                <ScalarProperty Name="Kommentar" ColumnName="Kommentar" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

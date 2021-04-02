@@ -1,0 +1,62 @@
+﻿@model WebApplicationAdmin.Models.UserB
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap" rel="stylesheet">
+    <script src="~/Scripts/modernizr-2.8.3.js"></script>
+    <style>
+        h1 {
+            font-family: 'Oswald', sans-serif;
+        }
+
+        input[type=submit] {
+            background-color: #339CFF;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            float: left;
+        }
+
+        input[value] {
+            font-size: large;
+        }
+
+        input[type=submit]:hover {
+            background-color: #86b2dc;
+        }
+    </style>
+</head>
+<body>
+    <br />
+    <h1>Logga in</h1>
+    <hr />
+    @using (Html.BeginForm())
+    {
+        <form>
+            <div class="form-group">
+                <th><h3>Användarnamn</h3></th>
+                @Html.TextBoxFor(m => m.Username)
+            </div>
+            <div class="form-group">
+                <th><h3>Lösenord</h3></th>
+                @Html.PasswordFor(m => m.Password)
+            </div>
+            <br />
+            <hr />
+            <input type="submit" value="Logga in">
+            <br />
+            <br />
+            <div>
+                @Html.ValidationSummary()
+            </div>
+        </form>
+    }
+
+</body>

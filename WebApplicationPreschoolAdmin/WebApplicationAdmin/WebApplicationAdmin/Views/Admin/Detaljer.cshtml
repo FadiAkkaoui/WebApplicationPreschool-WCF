@@ -1,0 +1,111 @@
+﻿@model List<WebApplicationAdmin.ServiceReference2.BarnClass>
+@{
+    ViewBag.Title = "Detaljer";
+}
+<html>
+<head>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300&family=Roboto+Condensed:wght@700&display=swap" rel="stylesheet">
+    <style>
+        #detaljer {
+            font-family: Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+            border-radius: 5px;
+        }
+
+            #detaljer td, #detaljer th {
+                border: 1px solid #ddd;
+                padding: 8px;
+            }
+
+            #detaljer tr:nth-child(even) {
+                background-color: #f2f2f2;
+            }
+
+            #detaljer tr {
+                background-color: #ddd;
+            }
+
+                #detaljer tr:hover {
+                    background-color: #ddd;
+                }
+
+            #detaljer th {
+                padding-top: 12px;
+                padding-bottom: 12px;
+                text-align: left;
+                background-color: #4CAF50;
+                color: white;
+            }
+
+        h1 {
+            font-family: 'Roboto Condensed', sans-serif;
+        }
+
+        .button {
+            background-color: #ef2e2e;
+            color: white;
+            border: 1px solid white;
+            padding: 12px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            float: left;
+            text-decoration: none;
+            margin-left: 20px;
+        }
+
+        .button2 {
+            background-color: #00ba04;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: large;
+            float: left;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <br />
+    <h1>Detaljer om barnet</h1>
+    <hr />
+    <br />
+    <table id="detaljer">
+        <tr>
+            <th>Barnetsfyrasiffror</th>
+            <th>Födelsedatum</th>
+            <th>Förnamn</th>
+            <th>Efternamn</th>
+            <th>Adress</th>
+            <th>Ort</th>
+            <th>Postnummer</th>
+            <th>Önskad förskola</th>
+            <th>Vårdnashavare</th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(m => item.Bfyrasiffror)</td>
+                <td>@Html.DisplayFor(m => item.Bfodelsedatum)</td>
+                <td>@Html.DisplayFor(m => item.Bfornamn)</td>
+                <td>@Html.DisplayFor(m => item.Befternamn)</td>
+                <td>@Html.DisplayFor(m => item.Bpostadress)</td>
+                <td>@Html.DisplayFor(m => item.Bpostort)</td>
+                <td>@Html.DisplayFor(m => item.Bpostnummer)</td>
+                <td>@Html.DisplayFor(m => item.Forskola)</td>
+                <td>@Html.ActionLink("Detaljer Vårdnadshavare", "DetaljerV", new { id = item.Vfyrasiffror })</td>
+            </tr>
+        }
+    </table>
+    <br />
+    <hr />
+    <br />
+    @Html.ActionLink("Tillbaka", "Ansokningar", "Admin", routeValues: null, htmlAttributes: new { @class = "button2" })
+    <br />
+    <br />
+    <br />
+</body>
+</html>

@@ -1,0 +1,100 @@
+﻿@model List<WebApplicationAdmin.ServiceReference2.BarnClass>
+@{
+    ViewBag.Title = "DetaljerV";
+}
+<html>
+
+<head>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300&family=Roboto+Condensed:wght@700&display=swap" rel="stylesheet">
+    <style>
+        #detaljerV {
+            font-family: Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+            border-radius: 5px;
+        }
+
+            #detaljerV td, #detaljerV th {
+                border: 1px solid #ddd;
+                padding: 8px;
+            }
+
+            #detaljerV tr:nth-child(even) {
+                background-color: #f2f2f2;
+            }
+
+            #detaljerV tr {
+                background-color: #ddd;
+            }
+
+                #detaljerV tr:hover {
+                    background-color: #ddd;
+                }
+
+            #detaljerV th {
+                padding-top: 12px;
+                padding-bottom: 12px;
+                text-align: left;
+                background-color: #4CAF50;
+                color: white;
+            }
+
+        h1 {
+            font-family: 'Roboto Condensed', sans-serif;
+        }
+
+        .button {
+            background-color: #00ba04;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: large;
+            float: left;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <br />
+    <h1>Detaljer om vårnadshavaren</h1>
+    <hr />
+    <br />
+    <table id="detaljerV">
+        <tr>
+            <th>Vårdnadshavarens fyrasiffror</th>
+            <th>Vårdnadshavarens födelsedatum</th>
+            <th>Förnamn</th>
+            <th>Efternamn</th>
+            <th>Adress</th>
+            <th>Ort</th>
+            <th>Postnummer</th>
+            <th>Hemtelefon</th>
+            <th>Mobiltelefon</th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(m => item.Bfyrasiffror)</td>
+                <td>@Html.DisplayFor(m => item.Vfodelsedatum)</td>
+                <td>@Html.DisplayFor(m => item.Vfornamn)</td>
+                <td>@Html.DisplayFor(m => item.Vefternamn)</td>
+                <td>@Html.DisplayFor(m => item.Vpostadress)</td>
+                <td>@Html.DisplayFor(m => item.Vpostort)</td>
+                <td>@Html.DisplayFor(m => item.Vpostnummer)</td>
+                <td>@Html.DisplayFor(m => item.Vhemtelefon)</td>
+                <td>@Html.DisplayFor(m => item.Vmobiltelefon)</td>
+            </tr>
+        }
+    </table>
+    <br />
+    <hr />
+    <br />
+    @Html.ActionLink("Tillbaka till ansökningar", "Ansokningar", "Admin", routeValues: null, htmlAttributes: new { @class = "button" })
+    <br />
+    <br />
+    <br />
+</body>
+</html>

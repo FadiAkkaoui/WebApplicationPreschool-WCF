@@ -1,0 +1,84 @@
+﻿@model List<WebApplicationForskola.ServiceReference2.StatusClass>
+@{ ViewBag.Title = "Index"; }
+<html>
+<head>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap" rel="stylesheet">
+    <style>
+        #status {
+            font-family: Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+            border-radius: 5px;
+        }
+
+            #status td, #status th {
+                border: 1px solid #ddd;
+                padding: 8px;
+            }
+
+            #status tr:nth-child(even) {
+                background-color: #f2f2f2;
+            }
+
+            #status tr {
+                background-color: #ddd;
+            }
+
+                #status tr:hover {
+                    background-color: #ddd;
+                }
+
+            #status th {
+                padding-top: 12px;
+                padding-bottom: 12px;
+                text-align: left;
+                background-color: #4CAF50;
+                color: white;
+            }
+
+        h1 {
+            font-family: 'Oswald', sans-serif;
+        }
+
+
+        .button {
+            background-color: #339CFF;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            float: inherit;
+            font-size: large;
+        }
+    </style>
+</head>
+<body>
+    <hr />
+    <h1>Status på ansökan</h1>
+    <hr />
+    <br />
+    <table id="status">
+        <tr>
+            <th>Gäller följande person</th>
+            <th>Bedömning</th>
+            <th>Datum</th>
+            <th>Kommentar</th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(m => item.Bfyrasiffror)</td>
+                <td>@Html.DisplayFor(m => item.Bedomning)</td>
+                <td>@Html.DisplayFor(m => item.Datum)</td>
+                <td>@Html.DisplayFor(m => item.Kommentar)</td>
+            </tr>
+        }
+    </table>
+    <br />
+    <hr />
+    @Html.ActionLink("Tillbaka", "Anvandare", "Anvandare", routeValues: null, htmlAttributes: new { @class = "button" })
+    <br />
+</body>
+</html>

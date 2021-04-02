@@ -1,0 +1,64 @@
+﻿@model WebApplicationAdmin.Models.IdnClass
+@{ViewBag.Title = "Index"; }
+
+<html>
+<head>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300&family=Roboto+Condensed:wght@700&display=swap" rel="stylesheet">
+    <style>
+        h1 {
+            font-family: 'Roboto Condensed', sans-serif;
+        }
+
+        input[type=submit] {
+            background-color: #e81e1e;
+            color: white;
+            padding: 12px 20px;
+            border: 1px solid white;
+            border-radius: 4px;
+            cursor: pointer;
+            float: left;
+        }
+
+        input[value] {
+            font-size: large;
+        }
+
+
+        input[type=submit]:hover {
+            background-color: #b43d3d;
+        }
+        .button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: large;
+            float: left;
+            margin-left: 20px;
+            text-decoration: none
+        }
+    </style>
+</head>
+<body>
+    <br />
+    <h1>Radera ansökan</h1>
+    @using (Html.BeginForm())
+    {
+        <hr />
+        <p>
+            <h3>Barnets Fyrasiffror:</h3>
+            @Html.EditorFor(m => m.id)
+        </p>
+        <hr />
+        <br />
+        <input type="submit" name="name" value="Radera" />
+        @Html.ActionLink("Tillbaka", "Ansokningar", "Admin", routeValues: null, htmlAttributes: new { @class = "button" })
+        <br />
+        <br />
+        <br />
+    }
+</body>
+</html>

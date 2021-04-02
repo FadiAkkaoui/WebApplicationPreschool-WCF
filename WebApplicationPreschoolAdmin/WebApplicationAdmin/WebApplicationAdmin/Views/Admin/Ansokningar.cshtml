@@ -1,0 +1,110 @@
+﻿@model List<WebApplicationAdmin.ServiceReference2.BarnClass>
+@{
+    ViewBag.Title = "Ansokningar";
+}
+<html>
+<head>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300&family=Roboto+Condensed:wght@700&display=swap" rel="stylesheet">
+    <style>
+        #ansokningar {
+            font-family: Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+            border-radius: 5px;
+        }
+
+            #ansokningar td, #ansokningar th {
+                border: 1px solid #ddd;
+                padding: 8px;
+            }
+
+            #ansokningar tr:nth-child(even) {
+                background-color: #f2f2f2;
+            }
+
+            #ansokningar tr {
+                background-color: #ddd;
+            }
+
+                #ansokningar tr:hover {
+                    background-color: #ddd;
+                }
+
+        #ansokningar th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            background-color: #4CAF50;
+            color: white;
+        }
+        h1 {
+            font-family: 'Roboto Condensed', sans-serif;
+        }
+
+        .button {
+            background-color: #ef2e2e;
+            color: white;
+            border: 1px solid white;
+            padding: 12px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            float: left;
+            text-decoration: none;
+            margin-left: 20px;
+        }
+
+        .button2 {
+            background-color: #00ba04;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: large;
+            float: left;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <br />
+    <h1>Ansökningar</h1>
+    <hr />
+    <br />
+    <table id="ansokningar">
+        <tr>
+            <th>Barnetsfyrasiffror</th>
+            <th>Mer detaljer om barnet</th>
+            <th>Bedömning</th>
+
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Bfyrasiffror)
+                </td>
+
+                <td>
+                    @Html.ActionLink("Detaljer", "Detaljer", new { id = item.Bfyrasiffror })
+                </td>
+                <td>
+                    @Html.ActionLink("Bedöm ansökan", "Bedom", new { id = item.Bfyrasiffror })
+                </td>
+            </tr>
+        }
+    </table>
+    <br />
+    <hr />
+    <br />
+    @Html.ActionLink("Hem", "Administrator", "Admin", routeValues: null, htmlAttributes: new { @class = "button2" })
+    @Html.ActionLink("Radera ansökningar", "Radera", "Admin", routeValues: null, htmlAttributes: new { @class = "button" })
+    <br />
+    <br />
+    <br />
+</body>
+</html>
+
+

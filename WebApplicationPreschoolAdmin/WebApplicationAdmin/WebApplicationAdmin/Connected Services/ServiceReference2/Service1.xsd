@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/WcfServiceForskolaAnsoka1" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/WcfServiceForskolaAnsoka1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="BarnTable">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Befternamn" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Bfodelsedatum" type="xs:int" />
+      <xs:element minOccurs="0" name="Bfornamn" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Bfyrasiffror" type="xs:int" />
+      <xs:element minOccurs="0" name="Bpostadress" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Bpostnummer" type="xs:int" />
+      <xs:element minOccurs="0" name="Bpostort" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Forskola" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Vefternamn" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Vfodelsedatum" type="xs:int" />
+      <xs:element minOccurs="0" name="Vfornamn" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Vfyrasiffror" type="xs:int" />
+      <xs:element minOccurs="0" name="Vhemtelefon" type="xs:int" />
+      <xs:element minOccurs="0" name="Vmobiltelefon" type="xs:int" />
+      <xs:element minOccurs="0" name="Vpostadress" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Vpostnummer" type="xs:int" />
+      <xs:element minOccurs="0" name="Vpostort" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BarnTable" nillable="true" type="tns:BarnTable" />
+  <xs:complexType name="StatusTable">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Bedomning" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Bfyrasiffror" type="xs:int" />
+      <xs:element minOccurs="0" name="Datum" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Kommentar" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StatusTable" nillable="true" type="tns:StatusTable" />
+  <xs:complexType name="ArrayOfBarnClass">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="BarnClass" nillable="true" type="tns:BarnClass" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBarnClass" nillable="true" type="tns:ArrayOfBarnClass" />
+  <xs:complexType name="BarnClass">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Befternamn" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Bfodelsedatum" type="xs:int" />
+      <xs:element minOccurs="0" name="Bfornamn" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Bfyrasiffror" type="xs:int" />
+      <xs:element minOccurs="0" name="Bpostadress" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Bpostnummer" type="xs:int" />
+      <xs:element minOccurs="0" name="Bpostort" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Forskola" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Vefternamn" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Vfodelsedatum" type="xs:int" />
+      <xs:element minOccurs="0" name="Vfornamn" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Vfyrasiffror" type="xs:int" />
+      <xs:element minOccurs="0" name="Vhemtelefon" type="xs:int" />
+      <xs:element minOccurs="0" name="Vmobiltelefon" type="xs:int" />
+      <xs:element minOccurs="0" name="Vpostadress" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Vpostnummer" type="xs:int" />
+      <xs:element minOccurs="0" name="Vpostort" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BarnClass" nillable="true" type="tns:BarnClass" />
+  <xs:complexType name="ArrayOfStatusClass">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="StatusClass" nillable="true" type="tns:StatusClass" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfStatusClass" nillable="true" type="tns:ArrayOfStatusClass" />
+  <xs:complexType name="StatusClass">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Bedomning" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Bfyrasiffror" type="xs:int" />
+      <xs:element minOccurs="0" name="Datum" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Kommentar" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StatusClass" nillable="true" type="tns:StatusClass" />
+</xs:schema>

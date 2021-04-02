@@ -1,0 +1,55 @@
+﻿
+@{
+    ViewBag.Title = "Administrator";
+}
+
+<html>
+<head>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300&family=Roboto+Condensed:wght@700&display=swap" rel="stylesheet">
+
+    <style>
+        h1 {
+            font-family: 'Roboto Condensed', sans-serif;
+        }
+        .button1 {
+            background-color: #339CFF;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: large;
+            float: left;
+            text-decoration: none
+        }
+        .button2 {
+            background-color: #00ba04;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: large;
+            float: left;
+            text-decoration: none
+        }
+    </style>
+</head>
+<body>
+    <br />
+    <h1>Välkommen admin</h1>
+    <hr />
+    @Html.ActionLink("Kolla ansökningar", "Ansokningar", "Admin", routeValues: null, htmlAttributes: new { @class = "button2" })
+    <br />
+    <br />
+    <br />
+    <hr />
+    @Html.ActionLink("Logga ut", "Index", "Home", routeValues: null, htmlAttributes: new { @class = "button1" })
+    <br />
+    <br />
+    <br />
+</body>
+</html>

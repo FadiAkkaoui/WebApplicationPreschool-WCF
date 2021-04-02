@@ -1,0 +1,45 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+
+
+<html>
+<head>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300&family=Roboto+Condensed:wght@700&display=swap" rel="stylesheet">
+
+    <style>
+        a {
+            font-family: 'Roboto Condensed', sans-serif;
+            font-size: 48px;
+        }
+
+        .button {
+            background-color: #339CFF;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: large;
+            float: left;
+            text-decoration: none
+        }
+    </style>
+</head>
+<body>
+    <br />
+    <a>Adminsida</a>
+   <br />
+    <br />
+    <hr />
+    @Html.ActionLink("Logga in", "LoginB", "Login", routeValues: null, htmlAttributes: new { @class = "button" })
+    <br />
+    <br />
+    <br />
+</body>
+</html>
